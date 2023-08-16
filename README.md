@@ -1,7 +1,7 @@
 # SIMPLE SHELL PROJECT
 
 ## AUTHORS:
-1. [Peter Mwangi](github.com/Peter-Mwangi254)
-2. [Collins Ochieng](github.com/Collins331)  
+1. [Peter Mwangi](https://github.com/Peter-Mwangi254)
+2. [Collins Ochieng](https://github.com/Collins331)  
 
 
