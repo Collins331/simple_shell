@@ -1,4 +1,4 @@
-#include "main.h"
+#include "simple.h"
 
 int main(void)
 {   
@@ -21,4 +21,4 @@ int main(void)
     
     }
     free(buffer);//frees allocated space
-  
+} 
