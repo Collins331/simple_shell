@@ -13,13 +13,13 @@ int main(void)
     {
         write(1, "Myshell$ ", 9);
         int read_char = getline(&lineptr, &buf_size, stdin);
-        token = strtok(lineptr, "\n\t");
+        token = strtok(lineptr, " \n\t");
         array = malloc(sizeof(char *) *1024);
 
         while (token)
         {
             array[i] = token;
-            token = strtok(NULL, "\n\t");
+            token = strtok(NULL, " \n\t");
             i++;
         }
         if (read_char == -1)
