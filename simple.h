@@ -2,19 +2,20 @@
 #define SIMPLE_H
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
 #include <sys/wait.h>
 #include <sys/types.h>
-#include <string.h>
 
 #define BUF_SIZE 1024
 
-char *get_line(void);
-int exe_cve(char **av);
+void print_prompt();
 int put_char(char c);
-extern char **environ;
-char **str_tok(char *str, char *delim);
-void prompt(void);
+void tokenize(char *str, char *delim, char **array, int *count);
+void use_execve(char **array);
+void use_pid(pid_t child_pid);
+
+
 
 #endif
