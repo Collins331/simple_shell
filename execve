@@ -10,7 +10,7 @@ int exe_cve(char **av)
 {
 	int state;
 	pid_t pid;
-	
+
 	pid = fork();
 
 
