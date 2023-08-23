@@ -1,6 +1,7 @@
 #include "simple.h"
 
-void tokenize(char *str, char *delim, char **array, int *count) {
+void tokenize(char *str, char *delim)
+{
     int i = 0;
     char **token;
     token = malloc(sizeof(char *) * BUF_SIZE);
@@ -20,11 +21,5 @@ void tokenize(char *str, char *delim, char **array, int *count) {
 
         i++;
     }
-
-    for (int j = 0; j < i; j++) {
-        array[j] = token[j];
-    }
-    
-    *count = i;
     free(token);
 }

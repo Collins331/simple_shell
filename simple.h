@@ -12,7 +12,7 @@
 
 void print_prompt();
 int put_char(char c);
-void tokenize(char *str, char *delim, char **array, int *count);
+void tokenize(char *str, char *delim);
 void use_execve(char **array);
 void use_pid(pid_t child_pid);
 
