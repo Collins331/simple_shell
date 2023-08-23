@@ -9,7 +9,6 @@ char **str_tok(char *str, char *delim)
 {
 	int i = 0;
 	char **token;
-
 	token = malloc(sizeof(char *) * BUF_SIZE);
 
 	if (token == NULL)

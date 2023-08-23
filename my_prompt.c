@@ -11,20 +11,28 @@ int main(void)
     
     while(1)
     {
-        write(1, "Myshell$ ", 9);
+        putchar('M');
+        putchar('y');
+        putchar('s');
+        putchar('h');
+        putchar('e');
+        putchar('l');
+        putchar('l');
+        putchar('$');
+        putchar(' ');
         int read_char = getline(&lineptr, &buf_size, stdin);
-        token = strtok(lineptr, " \n\t");
+        token = strtok(lineptr, "\n\t");
         array = malloc(sizeof(char *) *1024);
 
         while (token)
         {
             array[i] = token;
-            token = strtok(NULL, " \n\t");
+            token = strtok(NULL, "\n\t");
             i++;
         }
         if (read_char == -1)
     {
-        write(1, "Exiting shell..\n", 16);
+        putchar('\n');
         return (-1);
     }
             array[i] = NULL;

@@ -5,12 +5,14 @@
  * Return: Doesn't return success else -1 (error)
  */
 
+
 int exe_cve(char **av)
 {
 	int state;
 	pid_t pid;
-
+	
 	pid = fork();
+
 
 	if (pid == -1)
 	{
@@ -20,7 +22,7 @@ int exe_cve(char **av)
 	{
 		if (execve(av[0], av, environ) == -1)
 		{
-			perror(av[0]);
+			perror(av[1]);
 			return (-1);
 		}
 	}
