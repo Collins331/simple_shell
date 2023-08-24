@@ -14,7 +14,7 @@ void print_prompt(void);
 int put_char(char c);
 void tokenize(char *str, char *delim);
 void use_execve(char **array);
-int use_pid();
+int use_pid(void);
 
 
 
