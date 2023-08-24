@@ -1,25 +1,34 @@
 #include "simple.h"
 
+/**
+*tokenize - function that parses a string
+*@str: string to be parsed
+*@delim: delimiter
+**/
 void tokenize(char *str, char *delim)
 {
-    int i = 0;
-    char **token;
-    token = malloc(sizeof(char *) * BUF_SIZE);
+	int i = 0;
+	char **token;
 
-    if (token == NULL) {
-        exit(-1);
-    }
+	token = malloc(sizeof(char *) * BUF_SIZE);
 
-    token[i] = strtok(str, delim);
-    i++;
+	if (token == NULL)
+	{
 
-    while (1) {
-        token[i] = strtok(NULL, delim);
+	exit(-1);
+	}
 
-        if (token[i] == NULL)
-            break;
+	token[i] = strtok(str, delim);
+	i++;
 
-        i++;
-    }
-    free(token);
+	while (1)
+	{
+	token[i] = strtok(NULL, delim);
+
+	if (token[i] == NULL)
+	break;
+
+	i++;
+	}
+	free(token);
 }

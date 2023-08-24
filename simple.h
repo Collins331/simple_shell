@@ -10,7 +10,7 @@
 
 #define BUF_SIZE 1024
 
-void print_prompt();
+void print_prompt(void);
 int put_char(char c);
 void tokenize(char *str, char *delim);
 void use_execve(char **array);

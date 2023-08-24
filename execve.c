@@ -2,7 +2,7 @@
 
 /**
 * use_execve- function that executes a command
-* array : array to be executed
+* @array : pointer to an array to be executed
 **/
 
 void use_execve(char **array)

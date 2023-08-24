@@ -1,5 +1,14 @@
 #include "simple.h"
 
+/*
+* main - function that runs the shell program
+*@i: counter variable
+*@lineptr: pointer to arguments run
+*@array: array that stores parsed arguments
+*@buf_size: size of the buffer
+* Return : 0 when program runs successfully
+**/
+
 int main(void)
 {
 size_t buf_size = 0;
@@ -23,7 +32,6 @@ i++;
 }
 if (lineptr[0] == '\0')
 {
-free(lineptr);
 free(array);
 continue;
 }
@@ -38,8 +46,8 @@ else
 use_pid(child_pid);
 }
 i = 0;
-free(lineptr);
 free(array);
 }
+free(lineptr);
 return (0);
 }
