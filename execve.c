@@ -18,7 +18,7 @@ int use_execve(char **array)
 	}
 	else if (pid == 0)
 	{
-		if (execve(array[0], array, NULL) == -1)
+		if (execve(array[0], array, environ) == -1)
 		{
 			perror(array[0]);
 			return (1);
