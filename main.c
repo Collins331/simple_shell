@@ -2,48 +2,41 @@
 
 /**
 * main - the entry point of the shell program
+* @ac: argument count
+* @av: the array of arguments
+* @environ: the global variable
 * Return:0 when program runs successfully, 1 on error
 */
 
-int main(void)
+int main(int ac, char **av, char **environ)
 {
-size_t buf_size = 0;
-char *lineptr = NULL;
-char *token;
-int i = 0;
-char **array;
-pid_t child_pid;
+	char *input = NULL;
+	char **token;
+	char *delim = " \t\n";
+	char *env;
+	(void)ac;
 
-while (1)
-{
-print_prompt();
-getline(&lineptr, &buf_size, stdin);
-token = strtok(lineptr, "\n\t");
-array = malloc(sizeof(char *) * 1024);
-while (token)
-{
-array[i] = token;
-token = strtok(NULL, "\n\t");
-i++;
-}
-if (lineptr[0] == '\0')
-{
-free(array);
-continue;
-}
-array[i] = NULL;
-child_pid = fork();
-if (child_pid == 0)
-{
-use_execve(array);
-}
-else
-{
-use_pid(child_pid);
-}
-i = 0;
-free(array);
-}
-free(lineptr);
-return (0);
+	token = find_path(environ);
+
+	signal(SIGINT, SIG_IGN);
+
+	while (1)
+	{
+		input = get_line();
+
+		av = tokenize(input, delim);
+
+		env = av_path(av, token);
+
+		if (env == NULL)
+		{
+			use_execve(av);
+		}
+		free(av);
+
+		free(input);
+
+		free(env);
+	}
+	return (0);
 }

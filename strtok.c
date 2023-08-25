@@ -5,7 +5,7 @@
 *@str: string to be parsed
 *@delim: delimiter
 **/
-void tokenize(char *str, char *delim)
+char **tokenize(char *str, char *delim)
 {
 	int i = 0;
 	char **token;
@@ -14,8 +14,7 @@ void tokenize(char *str, char *delim)
 
 	if (token == NULL)
 	{
-
-	exit(-1);
+		exit(-1);
 	}
 
 	token[i] = strtok(str, delim);
@@ -23,12 +22,12 @@ void tokenize(char *str, char *delim)
 
 	while (1)
 	{
-	token[i] = strtok(NULL, delim);
+		token[i] = strtok(NULL, delim);
 
-	if (token[i] == NULL)
-	break;
+		if (token[i] == NULL)
+		break;
 
-	i++;
+		i++;
 	}
-	free(token);
+	return (token);
 }
