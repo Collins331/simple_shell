@@ -9,3 +9,4 @@
 ```
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ```
+This program works the same as unix operating system.
